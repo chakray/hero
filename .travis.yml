@@ -23,7 +23,7 @@ before_deploy:
     fi;
 deploy:
   - provider: pages
-    local-dir: dist/hero
+    local-dir: dist/demoHero
     github-token: $github
     skip-cleanup: true
     keep-history: true
