@@ -1,0 +1,11 @@
+<h1> {{ mod }} </h1>
+<p> {{ synopsis }} </p>
+<h2> {{ setup.title }} </h2>
+<cm-marked class='markdown-body' [str]='setup.content'></cm-marked>
+
+<p></p>
+<div class='badges'>
+  <ch-badge *ngFor='let b of badges' [logo]='b.logo' [text]='b.text' [url]='b.url'></ch-badge>
+</div>
+
+

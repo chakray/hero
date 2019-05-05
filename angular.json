@@ -136,6 +136,41 @@
           }
         }
       }
+    },
+    "@chakray/hero": {
+      "root": "projects/chakray/hero",
+      "sourceRoot": "projects/chakray/hero/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/chakray/hero/tsconfig.lib.json",
+            "project": "projects/chakray/hero/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/chakray/hero/src/test.ts",
+            "tsConfig": "projects/chakray/hero/tsconfig.spec.json",
+            "karmaConfig": "projects/chakray/hero/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/chakray/hero/tsconfig.lib.json",
+              "projects/chakray/hero/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "demoHero"
