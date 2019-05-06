@@ -1,1 +1,10 @@
 @import 'github-markdown-css/github-markdown.css'
+$assets-path: '/assets/hero' !default
+
+@function asset_url($res)
+  @return url(#{$assets-path + '/' + $res})
+
+body
+  background-color: beige
+  background: asset_url('bg.png')
+  color: red

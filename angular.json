@@ -24,7 +24,8 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "**/*", "input": "./projects/chakray/hero/src/assets", "output": "assets/hero" }
             ],
             "styles": [
               "src/styles.sass"

@@ -6,7 +6,23 @@ __cli__
   npm i @chakray/hero --save
 ```
 
-// __app.module.ts__
+__angular.json__
+
+```diff
+  "assets": [
+    "src/favicon.ico",
+    "src/assets",
+  +  { "glob": "**/*", "input": "./projects/chakray/hero/src/assets", "output": "assets/hero" }
+  ],
+```
+
+__style.sass__
+
+```
+@import '~@chakray/hero/theme/base'
+```
+
+__app.module.ts__
 
 ```
 import { ChHeroMod } from '@chakray/hero';
@@ -20,7 +36,7 @@ import { ChHeroMod } from '@chakray/hero';
 export class ...
 ```
 
-// __app.component.html__
+__app.component.html__
 
 ```
   <ch-hero [data]='data'></ch-hero>

@@ -2,12 +2,16 @@ import { Input, Component } from '@angular/core';
 import { Hero } from './hero';
 
 const badges = [{
+  text: 'npm',
+  logo: 'assets/hero/npm.png',
+  base: 'https://www.npmjs.com/package/@'
+}, {
   text: 'Github',
-  logo: 'https://github.com/chakray/marked/blob/master/src/assets/github.png?raw=true',
-  url: 'https://github.com/chakray/marked'
+  logo: 'assets/hero/github.png',
+  base: 'https://github.com/'
 }, {
   text: 'Angular',
-  logo: 'https://github.com/chakray/marked/blob/master/src/assets/ng.png?raw=true',
+  logo: 'assets/hero/ng.png',
   url: 'https://angular.io'
 }, {
   text: 'bmVsc29u',
@@ -23,6 +27,10 @@ const badges = [{
 export class ChHeroTag extends Hero {
   @Input() set data(v) {
     Object.assign(this, v);
+    this.badges.forEach(f => {
+      if (!f.base) { return; }
+      f.url = f.base + v.mod;
+    });
   }
   badges = badges;
 }

@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   data = {
-    mod: '@chakray/hero',
+    mod: 'chakray/hero',
     synopsis: 'quick setup for github-pages lander',
     setup: {
       title: 'Installation',
