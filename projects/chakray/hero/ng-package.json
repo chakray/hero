@@ -9,6 +9,6 @@
     }
   },
   "whitelistedNonPeerDependencies": [
-    "chakray", "marked"
+    "chakray", "marked", "github-markdown-css"
   ]
 }

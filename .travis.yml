@@ -19,7 +19,10 @@ after_success:
   - codecov
 before_deploy:
   - if [[ $TRAVIS_TAG ]]; then
-      if [[ $PWD != *"dist/chakray/hero" ]]; then cd dist/chakray/hero; fi;
+      if [[ $PWD != *"dist/chakray/hero" ]]; then
+        cp -rf projects/chakray/hero/src/theme dist/chakray/hero
+        cd dist/chakray/hero;
+      fi;
     fi;
 deploy:
   - provider: pages

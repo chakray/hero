@@ -1,14 +1,27 @@
 # setup
 
-> cli
+__cli__
+
 ```
   npm i @chakray/hero --save
 ```
 
-// app.module.ts
+// __app.module.ts__
+
 ```
+import { ChHeroMod } from '@chakray/hero';
+
+@NgModule({
+  ...
+  imports: [
+    ChHeroMod, ...
+  ]
+})
+export class ...
 ```
 
-// app.component.html
+// __app.component.html__
+
 ```
+  <ch-hero [data]='data'></ch-hero>
 ```
