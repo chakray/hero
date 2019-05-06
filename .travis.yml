@@ -7,7 +7,7 @@ install:
 script:
   - npm install codecov -g
   - npm run lint
-  # - npx ng build @chakray/hero
+  - npx ng build @chakray/hero
   - npx ng test --watch=false --code-coverage
   - BUILD=`date +%s`; sed -ie "s/BUILD/$BUILD/g" ./src/environments/environment.prod.ts
   - npx ng build --prod --deploy-url /hero/ --base-href /hero/
