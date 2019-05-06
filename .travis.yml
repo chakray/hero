@@ -8,6 +8,7 @@ script:
   - npm install codecov -g
   - npm run lint
   - npx ng build @chakray/hero
+  - cp -rf projects/chakray/hero/src/theme dist/chakray/hero
   - npx ng test --watch=false --code-coverage
   - BUILD=`date +%s`; sed -ie "s/BUILD/$BUILD/g" ./src/environments/environment.prod.ts
   - npx ng build --prod --deploy-url /hero/ --base-href /hero/
@@ -20,7 +21,6 @@ after_success:
 before_deploy:
   - if [[ $TRAVIS_TAG ]]; then
       if [[ $PWD != *"dist/chakray/hero" ]]; then
-        cp -rf projects/chakray/hero/src/theme dist/chakray/hero
         cd dist/chakray/hero;
       fi;
     fi;
