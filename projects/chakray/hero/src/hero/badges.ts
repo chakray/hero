@@ -11,6 +11,10 @@ export const badges = [{
   logo: 'assets/hero/travis.png',
   base: 'https://travis-ci.org/'
 }, {
+  text: 'Codecov',
+  logo: 'assets/hero/codecov.png',
+  base: 'https://codecov.io/gh/'
+}, {
   text: 'Angular',
   logo: 'assets/hero/ng.png',
   url: 'https://angular.io'
