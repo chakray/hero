@@ -8,7 +8,6 @@ Spec.outline(Tag, (ref) => {
   });
   ref.prop('data', () => {
     it('should update properties', () => {
-      console.log('asdf', tag)
       tag.data = { mod: 'test-tag' };
       expect(tag.badges[0].url.endsWith('test-tag')).toBeTruthy();
     });

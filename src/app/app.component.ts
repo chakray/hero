@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 
+const mod = 'chakray/hero';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   data = {
-    mod: 'chakray/hero',
+    mod,
     synopsis: 'quick setup for github-pages lander',
     setup: {
       title: 'Installation',
@@ -19,7 +21,7 @@ export class AppComponent {
   constructor(private ti: Title,
               private http: HttpClient) {
     ti.setTitle(this.data.mod);
-    const url = 'https://raw.githubusercontent.com/chakray/hero/master/notes/setup.md';
+    const url = `https://raw.githubusercontent.com/${mod}/master/notes/setup.md`;
     http.get(url, { responseType: 'text' }).subscribe(d => {
       const [title, ...content] = d.split('\n');
       const o = { title: title.split(' ')[1], content: content.join('\n') };
