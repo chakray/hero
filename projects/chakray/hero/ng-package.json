@@ -4,6 +4,7 @@
   "lib": {
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
+      "normalize.css": "normalize.css",
       "marked": "marked",
       "@chakray/marked": "@chakray/marked"
     }

@@ -1,7 +1,7 @@
 {
   "name": "@chakray/hero",
   "description": "quick setup for github-pages lander",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
@@ -9,9 +9,9 @@
   "dependencies": {
     "@chakray/marked": "0.0.5",
     "github-markdown-css": "^3.0.1",
-    "marked": "^0.6.2"
+    "marked": "^0.6.2",
+    "normalize.css": "^8.0.1"
   },
-  "version": "0.0.5",
   "license": "MIT",
   "keywords": [
     "angular",

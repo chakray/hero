@@ -1,9 +1,17 @@
+@import 'normalize.css'
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700')
+
 @import 'github-markdown-css/github-markdown.css'
 $assets-path: '/assets/hero' !default
 
 @function asset_url($res)
   @return url(#{$assets-path + '/' + $res})
 
+html, body
+  width: 100%
+  min-height: 100%
+
 body
   background: asset_url('bg.png')
   background-color: beige
+  font-family: Roboto, sans-serif
