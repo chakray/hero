@@ -1,7 +1,7 @@
 {
   "name": "@chakray/hero",
   "description": "quick setup for github-pages lander",
-  "version": "0.0.5",
+  "version": "0.2.0",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
