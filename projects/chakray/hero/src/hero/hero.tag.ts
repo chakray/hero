@@ -9,19 +9,16 @@ import { HeroConfig } from './hero.config';
   styleUrls: ['./hero.tag.sass']
 })
 export class ChHeroTag extends Hero {
-  @Input() set data(v) {
-    Object.assign(this, v);
-    this.badges.forEach(f => {
-      if (!f.base) { return; }
-      f.url = f.base + v.mod;
-    });
-  }
   badges = badges;
   constructor(private cfg: HeroConfig) {
     super();
     const ks = Object.keys(new Hero());
     ks.forEach(k => {
       this[k] = cfg[k];
+    });
+    this.badges.forEach(f => {
+      if (!f.base) { return; }
+      f.url = f.base + cfg.mod;
     });
   }
 }
