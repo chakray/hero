@@ -1,18 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AppSampleTag } from './sample.tag';
 import { ChHeroMod } from '@chakray/hero';
 import { AppComponent } from './app.component';
 
+const routes: Routes = [{
+  path: '', pathMatch: 'full', redirectTo: 'setup'
+}, {
+  path: 'setup',
+  component: AppSampleTag
+}, {
+  path: 'demo',
+  component: AppSampleTag
+}];
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppSampleTag,
   ],
   imports: [
     HttpClientModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot(routes),
     ChHeroMod,
     BrowserModule
   ],

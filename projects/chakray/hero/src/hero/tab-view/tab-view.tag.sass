@@ -1,0 +1,34 @@
+\:host
+  color: red
+  display: flex
+  flex-flow: column
+  .tabs
+    text-align: left
+    display: flex
+    align-items: flex-end
+    height: 42px
+    z-index: 20
+  .tab
+    flex: 1
+    padding: 8px 20px
+    display: inline-block
+    box-shadow: 0 -3px 4px rgba(1,1,1,.1)
+    background: var(--c-w-o)
+    transition: padding .2s ease-in, box-shadow .2s ease-in, border-radius .2s ease-in-out
+    &.on
+      padding: 14px 20px
+      border-radius: 6px 6px 0 0
+      box-shadow: 0 -3px 4px rgba(1,1,1,.3)
+      z-index: 30
+  .box
+    flex: 1
+    position: relative
+    display: block
+    box-shadow: 0 3px 4px var(--c-bl-bbbb)
+    border-radius: 3px
+    background: var(--c-w-o)
+    padding: 20px
+    text-align: left
+    overflow: auto
+    z-index: 50
+

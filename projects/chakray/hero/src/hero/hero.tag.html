@@ -1,11 +1,16 @@
 <h1> @{{ mod }} </h1>
-<p> {{ synopsis }} </p>
+<div> {{ synopsis }} </div>
+<!-- <ch-tabs></ch-tabs>
 <h2> {{ setup.title }} </h2>
 <cm-marked class='markdown-body' [str]='setup.content'></cm-marked>
+ -->
+<ch-tab-view [tabs]='tabs'>
+  <ng-content></ng-content>
+</ch-tab-view>
 
-<p></p>
 <div class='badges'>
-  <ch-badge *ngFor='let b of badges' [logo]='b.logo' [text]='b.text' [url]='b.url'></ch-badge>
+  <ch-badge *ngFor='let b of badges' [logo]='b.logo'
+    [text]='b.text' [url]='b.url'></ch-badge>
 </div>
 
 

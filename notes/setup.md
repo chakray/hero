@@ -12,7 +12,9 @@ __angular.json__
   "assets": [
     "src/favicon.ico",
     "src/assets",
-  +  { "glob": "**/*", "input": "./projects/chakray/hero/src/assets", "output": "assets/hero" }
++   { "glob": "**/*",
++     "input": "./projects/chakray/hero/src/assets",
++     "output": "assets/hero" }
   ],
 ```
 

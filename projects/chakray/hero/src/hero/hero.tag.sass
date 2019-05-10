@@ -1,6 +1,8 @@
 \:host
-  display: inline-block
+  display: inline-flex
+  flex-direction: column
   width: 100%
+  height: 100vh
   color: var(--c-bl)
   text-align: center
   h1
@@ -11,7 +13,11 @@
     text-shadow: 2px 2px 4px var(--c-w-oo)
   h2
     text-transform: capitalize
+  ch-tab-view
+    flex: 1
+    margin: 15px 15%
   cm-marked
+    flex: 1
     display: block
     margin: 0 15%
     box-shadow: 2px 2px 8px var(--c-bl-bbbb)
@@ -19,5 +25,14 @@
     background: transparentize(whitesmoke, .2)
     padding: 20px
     text-align: left
+    overflow: auto
   .badges
-    padding: 40px
+    display: flex
+    justify-content: center
+    margin: 0 15%
+    padding: 10px
+
+\:host
+  @media screen and (max-width: 580px)
+    cm-marked, .badges
+      margin: 0

@@ -16,4 +16,11 @@ export class ChHeroTag extends Hero {
     });
   }
   badges = badges;
+  tabs = [{
+    link: 'setup',
+    text: 'Setup'
+  }, {
+    link: 'demo',
+    text: 'Demo'
+  }]
 }

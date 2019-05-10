@@ -1,0 +1,9 @@
+<div class='tabs'>
+  <a class='tab' routerLinkActive='on' [routerLink]='t.link'
+    *ngFor='let t of tabs'>
+    {{ t.text }}
+  </a>
+</div>
+<div class='box'>
+  <ng-content></ng-content>
+</div>
