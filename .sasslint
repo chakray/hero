@@ -101,6 +101,7 @@ rules:
         - overflow
 
         - color
+        - font
         - font-family
         - font-size
         - font-style

@@ -7,7 +7,7 @@ import { HeroConfig } from '@chakray/hero';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
+export class AppTag {
   constructor(private hero: HeroConfig,
               private ti: Title) {
     ti.setTitle(hero.mod);

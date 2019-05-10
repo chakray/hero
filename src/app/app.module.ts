@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppSampleTag } from './sample.tag';
 import { ChHeroMod, ChMarkedTabTag, HeroConfig } from '@chakray/hero';
-import { AppComponent } from './app.component';
+import { AppTag } from './app.tag';
 
 import { SetupData } from './data';
 
@@ -30,7 +30,7 @@ const routes: Routes = [{
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppTag,
     AppSampleTag,
   ],
   imports: [
@@ -42,6 +42,6 @@ const routes: Routes = [{
   providers: [
     { provide: HeroConfig, useValue: new HeroConfig(heroCfg) }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppTag]
 })
 export class AppModule { }

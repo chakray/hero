@@ -13,7 +13,6 @@ function ghurl(mod, res) {
 export class Data {
   constructor(private cfg: HeroConfig, private http: HttpClient) {}
   notes(file, branch = 'master') {
-    console.log('cfg', this.cfg)
     const url = ghurl(this.cfg.mod, `${branch}/notes/${file}.md`);
     return this.http.get(url, { responseType: 'text' }).pipe(map(d => {
       const [title, ...content] = d.split('\n');

@@ -9,7 +9,7 @@ const mockHttp = {
   get() { return of('# test\ncontent\na'); }
 };
 
-import { AppComponent as Tag } from './app.component';
+import { AppComponent as Tag } from './app.tag';
 
 describe(Tag.name, () => {
   beforeEach(async(() => {
