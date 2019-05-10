@@ -6,10 +6,4 @@ Spec.outline(Tag, (ref) => {
   beforeEach(() => {
     tag = ref.tag;
   });
-  ref.prop('data', () => {
-    it('should update properties', () => {
-      tag.data = { mod: 'test-tag' };
-      expect(tag.badges[0].url.endsWith('test-tag')).toBeTruthy();
-    });
-  });
 });
