@@ -29,11 +29,22 @@ __app.module.ts__
 ```
 import { ChHeroMod } from '@chakray/hero';
 
+const routes: Routes = [{
+  path: 'setup',
+  resolve: {
+    loader: SetupData
+  },
+  component: ChMarkedTabTag
+}];
+
 @NgModule({
   ...
   imports: [
     ChHeroMod, ...
-  ]
+  ],
+  providers: [
+    { provide: HeroConfig, useValue: new HeroConfig({ mod: 'chakray/hero' }) }
+  ],
 })
 export class ...
 ```

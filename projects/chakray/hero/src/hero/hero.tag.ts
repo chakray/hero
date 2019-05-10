@@ -1,6 +1,7 @@
 import { Input, Component } from '@angular/core';
 import { Hero } from './hero';
 import { badges } from './badges';
+import { HeroConfig } from './hero.config';
 
 @Component({
   selector: 'ch-hero',
@@ -16,11 +17,11 @@ export class ChHeroTag extends Hero {
     });
   }
   badges = badges;
-  tabs = [{
-    link: 'setup',
-    text: 'Setup'
-  }, {
-    link: 'demo',
-    text: 'Demo'
-  }]
+  constructor(private cfg: HeroConfig) {
+    super();
+    const ks = Object.keys(new Hero());
+    ks.forEach(k => {
+      this[k] = cfg[k];
+    });
+  }
 }
