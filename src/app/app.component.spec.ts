@@ -1,40 +1,22 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { TestBed, async } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
+import { Spec } from '@chakray/utils/testing';
+import { heroConfig } from '@chakray/hero';
 
-const mockHttp = {
-  get() { return of('# test\ncontent\na'); }
-};
+import { AppTag as Tag } from './app.tag';
 
-import { AppComponent as Tag } from './app.tag';
-
-describe(Tag.name, () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      schemas: [NO_ERRORS_SCHEMA],
-      providers: [
-        { provide: HttpClient, useValue: mockHttp }
-      ],
-      imports: [
-        HttpClientTestingModule
-      ],
-      declarations: [
-        Tag
-      ],
-    }).compileComponents();
-  }));
-
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(Tag);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  });
-  it('should handle http.get', () => {
-    const fixture = TestBed.createComponent(Tag);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.data.setup).toEqual({ title: 'test', content: 'content\na' });
+Spec.tag(Tag, {
+  schemas: [NO_ERRORS_SCHEMA],
+  imports: [
+    RouterTestingModule
+  ],
+  providers: [
+    { provide: heroConfig, useValue: { mod: 'test' } }
+  ]
+}, (ref) => {
+  let t: Tag;
+  beforeEach(() => {
+    t = ref.tag;
   });
 });

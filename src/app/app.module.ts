@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppSampleTag } from './sample.tag';
-import { ChHeroMod, ChMarkedTabTag, HeroConfig } from '@chakray/hero';
+import { ChHeroMod, ChMarkedTabTag, heroConfig } from '@chakray/hero';
 import { AppTag } from './app.tag';
 
 import { SetupData } from './data';
@@ -40,7 +40,7 @@ const routes: Routes = [{
     BrowserModule
   ],
   providers: [
-    { provide: HeroConfig, useValue: new HeroConfig(heroCfg) }
+    { provide: heroConfig, useValue: heroCfg }
   ],
   bootstrap: [AppTag]
 })
